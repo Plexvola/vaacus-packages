@@ -1,0 +1,21 @@
+# Template file for 'zorin-icon-themes'
+pkgname=zorin-icon-themes
+version=2.9.12
+revision=1
+short_desc="The Zorin OS icon theme"
+maintainer="Azaleth <azaleth@riseup.net>"
+license="CC-BY-SA-4.0"
+homepage="https://zorin.com/os/"
+distfiles="https://github.com/ZorinOS/${pkgname}/archive/refs/tags/${version}.tar.gz"
+checksum=d3ff14c5fc632dbbf39e6e8b627c02d950fafb5666720d9fde9eced72b767d05
+
+do_install() {
+	vmkdir usr/share/icons
+	vcopy Zorin* usr/share/icons/
+
+	for color in Blue Green Orange Red Purple Grey; do
+		for theme in Dark Light; do
+			vcopy Zorin$color-$theme* usr/share/icons/
+		done
+	done
+}
