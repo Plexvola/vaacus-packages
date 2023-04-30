@@ -1,0 +1,27 @@
+# Template file for 'hyprpaper'
+pkgname=hyprpaper
+version=0.2.0
+revision=1
+build_style=cmake
+hostmakedepends="pkg-config wayland-devel git"
+makedepends="wayland-devel wayland-protocols cairo-devel pango-devel libjpeg-turbo-devel wlroots-devel"
+depends=""
+short_desc="Hyprpaper is a blazing fast wayland wallpaper utility with IPC controls."
+maintainer="Azaleth <azaleth@riseup.net>"
+license="GPL-3.0-or-later"
+homepage="https://github.com/hyprwm/hyprpaper"
+changelog="https://github.com/hyprwm/hyprpaper/releases/tag/v${version}"
+distfiles="https://github.com/hyprwm/hyprpaper/archive/refs/tags/v${version}.tar.gz"
+checksum=20c71db247c54480f5187b77b2b24cb11ec4c53ee599bd7d777f1fccdb344b5f
+
+do_build() {
+	make protocols
+
+	: ${make_cmd:=ninja}
+	cd ${cmake_builddir:=build}
+	${make_cmd} ${makejobs} ${make_build_args} ${make_build_target}
+}
+
+do_install() {
+	vbin ${cmake_builddir:=build}/hyprpaper
+}
