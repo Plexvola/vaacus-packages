@@ -1,0 +1,14 @@
+# Template file for 'python3-vext'
+pkgname=python3-vext
+version=0.7.6
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-setuptools python3-wheel python3-pip"
+makedepends=""
+depends="python3-ruamel.yaml"
+short_desc="Use system python packages from a virtualenv"
+maintainer="Azaleth <azaleth@riseup.net>"
+license="MIT"
+homepage="https://github.com/stuaxo/vext"
+distfiles="${PYPI_SITE}/v/vext/vext-${version}.tar.gz"
+checksum=eb77835593bb29dd4ab64ce6860c3b11e994fb802e7bd276286205ea4548781b
