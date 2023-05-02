@@ -1,0 +1,24 @@
+# Template file for 'mopidy-mpris'
+pkgname=mopidy-mpris
+version=3.0.3
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-setuptools python3-wheel"
+depends="mopidy python3-pydbus python3-pykka"
+short_desc="Mopidy extension for controlling Mopidy through the MPRIS D-Bus interface"
+maintainer="Azaleth <azaleth@riseup.net>"
+license="Apache-2.0"
+homepage="https://mopidy.com/ext/mpris/"
+distfiles="${PYPI_SITE}/M/Mopidy-MPRIS/Mopidy-MPRIS-${version}.tar.gz"
+checksum=ac7420348ca5b9d4c42fb4430bc748a7219330eb754dace7ea2fe8aca9523f85
+
+do_install() {
+	if [ -z "${make_install_target}" ]; then
+		# Default wheel name normalizes hyphens to underscores
+		local wheelbase="${pkgname#python3-}"
+		make_install_target="dist/Mopidy_MPRIS-${version}-*-*-*.whl"
+	fi
+
+	python3 -m installer --destdir ${DESTDIR} \
+		${make_install_args} ${make_install_target}
+}
