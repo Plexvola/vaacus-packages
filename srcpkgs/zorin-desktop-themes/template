@@ -1,10 +1,10 @@
 # Template file for 'zorin-desktop-themes'
 pkgname=zorin-desktop-themes
 version=3.4.5
-revision=1
-short_desc="The Zorin OS desktop theme"
+revision=2
+short_desc="Zorin OS desktop theme"
 maintainer="Azaleth <azaleth@riseup.net>"
-license="GPL-2.0"
+license="GPL-2.0-or-later"
 homepage="https://zorin.com/os/"
 distfiles="https://github.com/ZorinOS/${pkgname}/archive/refs/tags/${version}.tar.gz"
 checksum=d7d5bac5794b35c034cc15a606e320678d9d6327b4faaf1c97bce4fa8e563e58
