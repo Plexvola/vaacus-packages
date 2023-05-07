@@ -1,11 +1,11 @@
 # Template file for 'mopidy-mpris'
 pkgname=mopidy-mpris
 version=3.0.3
-revision=1
+revision=2
 build_style=python3-pep517
 hostmakedepends="python3-setuptools python3-wheel"
 depends="mopidy python3-pydbus python3-pykka"
-short_desc="Mopidy extension for controlling Mopidy through the MPRIS D-Bus interface"
+short_desc="Mopidy extension for controlling Mopidy through the MPRIS interface"
 maintainer="Azaleth <azaleth@riseup.net>"
 license="Apache-2.0"
 homepage="https://mopidy.com/ext/mpris/"
