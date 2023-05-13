@@ -1,0 +1,28 @@
+# Template file for 'jellyfin-mpv-shim'
+pkgname=jellyfin-mpv-shim
+version=2.6.0
+revision=1
+build_style=python3-module
+hostmakedepends="python3-setuptools gettext"
+depends="mpv python3 python3-mpv python3-mpv-jsonipc python3-jellyfin-apiclient
+python3-tkinter
+$(vopt_if systray python3-pystray)
+$(vopt_if shaders default-shader-pack)
+$(vopt_if mirror 'python3-Jinja2 python3-pywebview')"
+short_desc="MPV-based desktop and cast client for Jellyfin"
+maintainer="Neel Chotai <neel@chot.ai>"
+license="MIT, GPL-3.0-or-later"
+homepage="https://github.com/jellyfin/jellyfin-mpv-shim"
+distfiles="https://github.com/jellyfin/jellyfin-mpv-shim/archive/v${version}.tar.gz"
+checksum=8edab5c7ef8dc3d7e6ae34a0168a73a24e442850053f5530e1053bb85619d0ef
+
+build_options="mirror shaders systray"
+build_options_default="mirror shaders systray"
+
+post_install() {
+	vdoc README.md
+	vlicense LICENSE.md
+
+	ln -s /usr/share/default-shader-pack \
+		${DESTDIR}/${py3_sitelib}/jellyfin_mpv_shim/default_shader_pack
+}
