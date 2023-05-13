@@ -1,7 +1,7 @@
 # Template file for 'mopidy-mpris'
 pkgname=mopidy-mpris
 version=3.0.3
-revision=2
+revision=1
 build_style=python3-pep517
 hostmakedepends="python3-setuptools python3-wheel"
 depends="mopidy python3-pydbus python3-pykka"
