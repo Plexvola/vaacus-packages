@@ -1,0 +1,14 @@
+# Template file for 'iamb'
+pkgname=iamb
+version=0.0.7
+revision=1
+build_style=cargo
+hostmakedepends=""
+makedepends=""
+depends=""
+short_desc="A Matrix client for Vim addicts"
+maintainer="Azaleth <azaleth@riseup.net>"
+license="Apache-2.0"
+homepage="https://iamb.chat"
+distfiles="https://github.com/ulyssa/${pkgname}/archive/refs/tags/v${version}.tar.gz"
+checksum=76488965ffbcae17d6c84852879fb98d5ef9360c09e5f8ca74eb1e7428c4d266
