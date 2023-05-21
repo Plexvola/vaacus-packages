@@ -1,10 +1,10 @@
 # Template file for 'xdg-desktop-portal-hyprland'
 pkgname=xdg-desktop-portal-hyprland
 version=0.3.1
-revision=1
+revision=2
 build_style=meson
 hostmakedepends="pkg-config cmake wayland-devel"
-makedepends="pipewire-devel hyprland-protocols wayland-protocols
+makedepends="pipewire-devel hyprland-protocols wayland-protocols wayland-devel
   inih-devel libgbm-devel libdrm-devel libuuid-devel basu-devel"
 depends="$(vopt_if screensharing qt6-base qt6-wayland)"
 short_desc="xdg-desktop-portal backend for hyprland"
