@@ -1,0 +1,14 @@
+# Template file for 'fastfetch'
+pkgname=fastfetch
+version=1.11.0
+revision=1
+build_style=cmake
+hostmakedepends=""
+makedepends=""
+depends=""
+short_desc="Like neofetch, but much faster because written in C."
+maintainer="Azaleth <azaleth@riseup.net>"
+license="MIT"
+homepage="https://github.com/LinusDierheimer/fastfetch"
+distfiles="https://github.com/LinusDierheimer/fastfetch/archive/refs/tags/${version}.tar.gz"
+checksum=900b3c19f56fca59fd90ae2a033f40fec00185f2a0078dabdcc13a27635dd989
